@@ -1,0 +1,183 @@
+/* Reset básico e estilos gerais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 3rem;
+    color: #F07F3C;
+    font-family: 'Anton', sans-serif;
+}
+
+.month-category {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.month-title {
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: #421B71;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px 15px;
+    border-radius: 5px 5px 0 0;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.month-title:hover {
+    color: #F07F3C;
+}
+
+.event-list {
+    padding-left: 15px;
+    border-left: 3px solid transparent;
+    margin-bottom: 20px;
+}
+
+.event-item {
+    border-left: 3px solid transparent;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.03);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.event-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.event-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.event-details {
+    font-size: 1rem;
+    color: #555;
+}
+
+.event-period {
+    font-style: italic;
+    color: #777;
+}
+
+/* Condições - borda esquerda colorida */
+
+/* Eventos passados */
+.event-item.past {
+    border-left-color: #a0aec0; /* borda cinza médio */
+    color: #b0b7c3; /* texto cinza clarinho para passado */
+    cursor: default;
+    box-shadow: none;
+    transform: none;
+}
+.event-item.past::before {
+    content: "encerrado:";
+    display: block;
+    color: #b0b7c3;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+.event-item.past:hover {
+    box-shadow: none;
+    transform: none;
+}
+
+/* Eventos com até 3 dias para acabar */
+.event-item.upcoming-3 {
+    border-left-color: #cc0000; /* borda vermelha */
+    background-color: #fff5f5;
+    color: #900000;
+}
+
+.event-item.upcoming-3::before {
+    content: "Atenção:";
+    display: block;
+    color: #cc0000;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* Eventos com até 7 dias para acabar */
+.event-item.upcoming-7 {
+    border-left-color: #f1c40f; /* borda amarela */
+    background-color: #fffbea;
+}
+
+.event-item.upcoming-7::before {
+    content: "Atenção:";
+    display: block;
+    color: #f1c40f;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+
+/* Eventos ativos (não próximos de acabar) */
+.event-item.upcoming {
+    border-left-color: #27ae60; /* borda verde */
+    background-color: #e6f4ea;
+}
+
+/* Estilo do botão */
+.btn-custom {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 10px 25px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #F07F3C;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+}
+
+.btn-custom:hover {
+    background-color: #ee931c;
+    transform: scale(1.05);
+}
+
+/* Título do módulo */
+h2 {
+    text-align: center;
+    font-size: 1.25rem;
+    color: #ffffff;
+    background-color: #1d640f;
+    border-radius: 5px 5px 0 0;
+    padding: 8px 0;
+    margin-bottom: 25px;
+}
